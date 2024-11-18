@@ -1,0 +1,24 @@
+[tool.poetry]
+# Name matches project folder and follows PEP 508
+name = "ai_linguist"
+version = "0.1.0"
+description = "A library with AI for creating Obsidian notes to generate Anki cards"
+authors = ["aerophora <poka.tak.45@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+openai = "^1.54.4"
+pydantic-settings = "^2.6.1"
+mypy = "^1.13.0"
+black = "^24.10.0"
+betterlogging = "^1.0.0"
+
+[tool.mypy]
+plugins = [
+    "pydantic.mypy"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
