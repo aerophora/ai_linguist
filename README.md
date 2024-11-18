@@ -1,4 +1,4 @@
-# Auto Anki AI
+# AI Linguist
 
-A powerful service to create __Obsidian__ notes automaticly and then initialize anki
-cards based on your ChatGPT answer
+A powerful tool to create **Obsidian** notes automaticly and then initialize **Anki** 
+cards via **Export to Anki** plugin based on your **ChatGPT** answer

@@ -4,11 +4,12 @@ from pydantic_settings import (
 )
 
 
-class OpenAiConfig(BaseSettings):
-    TOKEN: str
+class ObsidianConfig(BaseSettings):
+
+    KNOWLEDGE_NAME: str
 
     model_config = SettingsConfigDict(
-        env_prefix="OPEN_AI_",
+        env_prefix="OBSIDIAN_",
         env_file=".env",
         strict=True,
         extra="ignore",
