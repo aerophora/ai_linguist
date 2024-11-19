@@ -7,7 +7,7 @@ the [Export to Anki](https://github.com/ObsidianToAnki/Obsidian_to_Anki)
 plugin
 
 ## What is needed for installation?
-- [Termux](https://termux.dev/en/) `If you plan to work on mobile devices, 
+- [Termux](https://termux.dev/en/) `If you plan to work on mobile devices,
 otherwise skip` 
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org/)
