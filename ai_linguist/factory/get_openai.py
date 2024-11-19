@@ -1,4 +1,5 @@
 from openai import OpenAI
+
 from .get_config import Config
 
 

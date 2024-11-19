@@ -1,9 +1,10 @@
 from typing import Callable, Generator
+
 from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
 
-def poll_user(
+def poll(
     handler: Callable[[OpenAI, str], tuple[ChatCompletion, str]],
     openai: OpenAI,
 ) -> Generator[tuple[ChatCompletion, str]]:

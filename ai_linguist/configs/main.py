@@ -1,9 +1,10 @@
 from pydantic import BaseModel
-from .open_ai import OpenAiConfig
-from .obsidian import ObsidianConfig
-from .user import UserConfig
+
 from .english import EnglishConfig
 from .german import GermanConfig
+from .obsidian import ObsidianConfig
+from .open_ai import OpenAiConfig
+from .user import UserConfig
 
 
 class Config(BaseModel):
