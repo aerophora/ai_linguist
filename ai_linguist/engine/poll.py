@@ -1,7 +1,9 @@
 from typing import Callable, Generator
 
-from openai import OpenAI
+from openai import InternalServerError, OpenAI
 from openai.types.chat import ChatCompletion
+
+from ..tools.logging import main_logger
 
 
 def poll(
@@ -9,6 +11,13 @@ def poll(
     openai: OpenAI,
 ) -> Generator[tuple[ChatCompletion, str]]:
     while True:
-        question = str(input("Write your word/sentence to translate 🌍: "))
+        question = str(input("Enter a word or sentence to translate 🌍: "))
         if question:
-            yield handler(openai, question)
+            try:
+                yield handler(openai, question)
+            except InternalServerError:
+                main_logger.error(
+                    "\n\nOops... there seems to be an issue with \
+                        your internet connection or the OpenAI server ❌🛜\n\n"
+                )
+                break

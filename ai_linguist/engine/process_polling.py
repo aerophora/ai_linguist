@@ -6,7 +6,6 @@ from ..configs.main import Config
 from ..engine.create_note import create_note
 from ..engine.executor import executor
 from ..engine.poll import poll
-from ..tools.logging import main_logger
 
 
 def process_polling(
@@ -19,12 +18,15 @@ def process_polling(
                 "second": f"{result.choices[1].message.content}",
                 "third": f"{result.choices[2].message.content}",
             }
+
             print(
+                "\n3 responses received from GPT 🤖\n",
                 results.get("first"),
                 results.get("second"),
                 results.get("third"),
                 sep="\n",
             )
+
             create_note(
                 data=results,
                 question=question,
@@ -32,5 +34,7 @@ def process_polling(
                 config=config,
             )
 
+            print("\n\nSuccess! ✨\n\n")
+
     except KeyboardInterrupt:
-        main_logger.info("\nBye! 👋🏻")
+        print("\n\nBye! 👋🏻\n\n")

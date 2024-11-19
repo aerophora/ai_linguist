@@ -39,13 +39,13 @@ def get_knowledge(
             files = files
             if name in dirs:
                 found_path = Path(root) / name
-                main_logger.info(f"Папка знайдена: {found_path} ✨")
+                main_logger.info(f"The folder was found: {found_path} ✨")
                 break
         if found_path:
             break
 
     if not found_path:
-        msg = f"Не знайдено папки з таким імʼям: {name} ❌"
+        msg = f"The folder with specified name wasn't found: {name} ❌"
         raise FileNotFoundError(msg)
 
     # Define required paths

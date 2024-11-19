@@ -21,8 +21,8 @@ def create_note(
     while True:
         index = str(
             input(
-                "\nSelect which one from request can be used in your note"
-                " (1, 2, 3, Stop) ✨: "
+                "\n👉🏻 Choose which response to use in your note "
+                "(1, 2, 3, or Stop) ✨: "
             )
         )
 
@@ -92,13 +92,13 @@ def create_note(
                 final_path=final_path, file_id=file_id, translate=translate
             )
         except Exception as e:
-            main_logger.error(f"Error while adding a link to the MOC ❌: {e}")
+            raise SystemError(f"Error while adding a link to the MOC ❌: {e}")
 
         try:
             new_note_path = all_notes_path / f"{file_id}.md"
             new_note_path.write_text(note_content, encoding="utf-8")
         except Exception as e:
-            main_logger.error(f"Error while creating a note ❌: {e}")
+            raise SystemError(f"Error while creating a note ❌: {e}")
         else:
             main_logger.info(
                 f"Note created successfully at {new_note_path} ✨"

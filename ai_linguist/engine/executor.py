@@ -14,7 +14,7 @@ def executor(
                 {
                     "role": "user",
                     "content": f"{TRANSLATE}\n\n \
-                    Here's user query: {question}",
+                    Here's user request: {question}",
                 }
             ],
             n=3,
