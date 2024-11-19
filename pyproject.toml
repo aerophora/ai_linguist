@@ -7,7 +7,7 @@ authors = ["aerophora <poka.tak.45@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = ">=3.13"
 openai = "^1.54.4"
 pydantic-settings = "^2.6.1"
 mypy = "^1.13.0"
