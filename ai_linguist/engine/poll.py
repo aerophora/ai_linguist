@@ -9,7 +9,7 @@ from ..tools.logging import main_logger
 def poll(
     handler: Callable[[OpenAI, str], tuple[ChatCompletion, str]],
     openai: OpenAI,
-) -> Generator[tuple[ChatCompletion, str]]:
+) -> Generator[tuple[ChatCompletion, str], None, None]:
     while True:
         question = str(input("Enter a word or sentence to translate 🌍: "))
         if question:
