@@ -29,8 +29,7 @@ def get_knowledge(
     if start_dirs is None:
         start_dirs = [
             Path.home(),
-            Path("/data/data/"),
-            Path("/"),
+            Path("/storage/emulated/0")
         ]
 
     found_path = None

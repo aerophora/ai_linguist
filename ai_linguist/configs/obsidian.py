@@ -2,7 +2,6 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class ObsidianConfig(BaseSettings):
-
     KNOWLEDGE_NAME: str
 
     model_config = SettingsConfigDict(
