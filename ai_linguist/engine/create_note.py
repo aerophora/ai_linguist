@@ -15,7 +15,7 @@ def create_note(
     knowledge: list[Path],
     config: Config,
     question: str | None = None,
-) -> None:
+) -> bool:
     match = {"1": "first", "2": "second", "3": "third"}
 
     while True:
@@ -27,7 +27,7 @@ def create_note(
         )
 
         if index.lower() == "stop":
-            return
+            return False
 
         final_request = None
 
@@ -103,4 +103,5 @@ def create_note(
             main_logger.info(
                 f"Note created successfully at {new_note_path} ✨"
             )
-        return
+
+        return True

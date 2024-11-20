@@ -27,10 +27,7 @@ def get_knowledge(
         files are missing.
     """
     if start_dirs is None:
-        start_dirs = [
-            Path.home(),
-            Path("/storage/emulated/0")
-        ]
+        start_dirs = [Path.home(), Path("/storage/emulated/0")]
 
     found_path = None
     for start_dir in start_dirs:

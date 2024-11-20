@@ -27,14 +27,17 @@ def process_polling(
                 sep="\n",
             )
 
-            create_note(
+            t_f = create_note(
                 data=results,
                 question=question,
                 knowledge=knowledge,
                 config=config,
             )
 
-            print("\n\nSuccess! ✨\n\n")
+            if t_f:
+                print("\n\nSuccess! ✨\n\n")
+            else:
+                print("\n\nInterrupted! ✨\n\n")
 
     except KeyboardInterrupt:
         print("\n\nBye! 👋🏻\n\n")
