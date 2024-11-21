@@ -34,8 +34,13 @@ def process_polling(
                 config=config,
             )
 
-            if t_f:
+            if t_f and not isinstance(t_f, list):
                 print("\n\nSuccess! ✨\n\n")
+            elif isinstance(t_f, list) and t_f[0] == "Incorrect choise":
+                print(
+                    f"\n\nInterrupted due to incorrect choise: "
+                    f"{t_f[1]}! 🙂‍↔️\n\n"
+                )
             else:
                 print("\n\nInterrupted! ✨\n\n")
 

@@ -15,7 +15,7 @@ def create_note(
     knowledge: list[Path],
     config: Config,
     question: str | None = None,
-) -> bool:
+) -> bool | list[str]:
     match = {"1": "first", "2": "second", "3": "third"}
 
     while True:
@@ -37,9 +37,12 @@ def create_note(
                 break
 
         if final_request:
-            data = json.loads(final_request)
+            try:
+                data = json.loads(final_request)
+            except Exception as e:
+                raise ValueError(f"Request can't be deserialized ❌: {e}")
         else:
-            raise ValueError("Request can't be deserialized ❌")
+            return ["Incorrect choise", index]
 
         obj = data.get("object", "Unknown")
         translate = data.get("translate", "Unknown")
