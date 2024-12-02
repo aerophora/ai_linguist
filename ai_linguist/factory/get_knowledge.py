@@ -5,7 +5,7 @@ from ..tools.logging import main_logger
 
 
 def get_knowledge(
-    name: str = "ai_knowledge",
+    name: str,
     start_dirs: list[Path] | None = None,
 ) -> list[Path]:
     """

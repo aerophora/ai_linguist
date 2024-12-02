@@ -7,14 +7,15 @@ from ..tools.logging import main_logger
 
 
 def poll(
-    handler: Callable[[OpenAI, str], tuple[ChatCompletion, str]],
+    handler: Callable[[OpenAI, str, str], tuple[ChatCompletion, str]],
     openai: OpenAI,
+    instruction: str,
 ) -> Generator[tuple[ChatCompletion, str], None, None]:
     while True:
         question = str(input("Enter a word or sentence to translate 🌍: "))
         if question:
             try:
-                yield handler(openai, question)
+                yield handler(openai, question, instruction)
             except InternalServerError:
                 main_logger.error(
                     "\n\nOops... there seems to be an issue with \

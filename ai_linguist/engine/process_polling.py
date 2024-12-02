@@ -9,10 +9,12 @@ from ..engine.poll import poll
 
 
 def process_polling(
-    openai: OpenAI, knowledge: list[Path], config: Config
+    openai: OpenAI, knowledge: list[Path], config: Config, instruction: str
 ) -> None:
     try:
-        for result, question in poll(handler=executor, openai=openai):
+        for result, question in poll(
+            handler=executor, openai=openai, instruction=instruction
+        ):
             results = {
                 "first": f"{result.choices[0].message.content}",
                 "second": f"{result.choices[1].message.content}",
